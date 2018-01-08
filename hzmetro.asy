@@ -110,8 +110,8 @@ pen Line9_Pen = rgb(0.8000,0.4118,0.0000);
 pen Line10_Pen = rgb(0.7882,0.8078,0.2039);
 
 Station[] Line1_Stations = {
-  station((97,-1.5), name = "下沙江滨", name_en="XiaShaJiangBin"),
-  station((97,5.5), name = "云水", name_en="YunShui"),
+  station((97,-1.5), name = "下沙江滨", name_en="XiaShaJiangBin", lalign=10E),
+  station((97,5.5), name = "云水", name_en="YunShui", lalign=10E),
   station((97,12.5), display = false),
   station((95,12.5), name = "文海南路", name_en="South WenHai Rd.", trans = 2, orient = 2),
   station((87,12.5), name = "文泽路", name_en="WenZe Rd."),
