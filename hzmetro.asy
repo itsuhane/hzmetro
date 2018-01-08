@@ -110,6 +110,14 @@ pen Line9_Pen = rgb(0.8000,0.4118,0.0000);
 pen Line10_Pen = rgb(0.7882,0.8078,0.2039);
 
 Station[] Line1_Stations = {
+  station((97,-1.5), name = "下沙江滨", name_en="XiaShaJiangBin"),
+  station((97,5.5), name = "云水", name_en="YunShui"),
+  station((97,12.5), display = false),
+  station((95,12.5), name = "文海南路", name_en="South WenHai Rd.", trans = 2, orient = 2),
+  station((87,12.5), name = "文泽路", name_en="WenZe Rd."),
+  station((80,12.5), name = "高沙路", name_en="GaoSha Rd."),
+  station((73,12.5), name = "金沙湖", name_en="JinShaHu"),
+  station((66,12.5), name = "下沙西", name_en="West XiaSha", trans = 2, orient = 0),
   station((59,12.5), name = "客运中心", name_en="Coach Center", trans = 2, orient = 2, lalign=20S),
   station((52,12.5), name = "九堡", name_en="JiuBao"),
   station((45,12.5), name = "九和路", name_en="JiuHe Rd."),
@@ -239,9 +247,14 @@ Station[] Line7_Stations = {
 };
 
 Station[] Line9_Stations = {
-  station((24.5,-11.5), name = "钱江路", name_en="QianJiang Rd.", trans = 2, orient = 1, display = false),
-  station((19,-17), display = false),
-  station((0,-17), name = "龙翔桥", name_en="LongXiangQiao", trans = 2, orient = 2, lalign=10W, display = false),
+  station((60,61.5), name = "临平", name_en="LinPing", trans=2, lalign=10W),
+  station((60,53.5), name = "南苑", name_en="NanYuan", lalign=10W),
+  station((60,45.5), name = "余杭高铁站", name_en="YuHang Hi-Railway", trans=2, lalign=10W),
+  station((60,37.5), name = "翁梅", name_en="WengMei", lalign=10W),
+  station((60,29.5), name = "乔司", name_en="QiaoSi", lalign=10W),
+  station((60,21.5), name = "乔司南", name_en="South QiaoSi", trans=2, orient=-2, lalign=10W),
+  station((60,14.5), display=false),
+  station((59,13.5), name = "客运中心", name_en="Coach Center", trans = 2, orient = -2, display = false),
 };
 
 draw_line(Line1_Stations, Line1_Pen+Rail_Pen);
@@ -251,7 +264,7 @@ draw_line(Line4_Stations, Line4_Pen+Rail_Pen);
 //draw_line(Line5_Stations, Line5_Pen+Rail_Pen);
 //draw_line(Line6_Stations, Line6_Pen+Rail_Pen);
 //draw_line(Line7_Stations, Line7_Pen+Rail_Pen);
-//draw_line(Line9_Stations, Line9_Pen+Rail_Pen);
+draw_line(Line9_Stations, Line9_Pen+Rail_Pen);
 draw_stations(Line1_Stations);
 draw_stations(Line2_Stations);
 //draw_stations(Line3_Stations);
@@ -259,7 +272,7 @@ draw_stations(Line4_Stations);
 //draw_stations(Line5_Stations);
 //draw_stations(Line6_Stations);
 //draw_stations(Line7_Stations);
-//draw_stations(Line9_Stations);
+draw_stations(Line9_Stations);
 /*
 void draw_legend(string n, pair pos, pen p) {
   path rrect = (-3,-4) -- (3, -4){right} .. {up}(4,-3) -- (4,3){up} .. {left}(3,4) -- (-3, 4){left} .. {down}(-4, 3) -- (-4, -3){down} .. {right}cycle;
