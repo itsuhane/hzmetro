@@ -28,7 +28,7 @@ struct Station {
 };
 
 pair point(real x, real y) {
- return (x*r*2, y*r*2);
+  return (x*r*2, y*r*2);
 }
 
 Station station(pair coord, int trans = 1, int orient = 0, string name = '', string name_en = '', int tshift = 0, bool display = true, pair lalign = 10N) {
@@ -66,8 +66,8 @@ void draw_station(Station s) {
   fill(shift(s.coord*r*2)*rotate(rot*45)*spath, rgb(1,1,1));
   draw(shift(s.coord*r*2)*rotate(rot*45)*spath, spen);
   picture labelpic;
-  label(labelpic,s.name,(0,18),fontsize(24));
-  label(labelpic,s.name_en,(0,0),fontsize(12));
+  label(labelpic,s.name,(0,18),rgb(0,0,0)+fontsize(20));
+  label(labelpic,s.name_en,(0,0),rgb(0,0,0)+fontsize(12));
   draw(labelpic, box((-10,-8),(10,32)), nullpen);
   add(labelpic.fit(), s.c(), s.lalign);
 }
@@ -119,8 +119,8 @@ Station[] Line1_Stations = {
   station((16,12.5), name = "闸弄口", name_en="ZhaLongKou"),
   station((7.5,12.5), name = "打铁关", name_en="DaTieGuan", trans = 2, orient = 0),
   station((0,12.5), display=false),
-  station((0,5.5), name = "西湖文化广场", name_en="West Lake Cultural Sq.", trans = 2, orient = 4, lalign=10E),
-  station((0,0), name = "武林广场", name_en="WuLin Sq.", trans = 2, orient = 4, lalign=10E),
+  station((0,5.5), name = "西湖文化广场", name_en="West Lake Cultural Sq.", trans = 2, orient = 4, lalign=5N),
+  station((0,0), name = "武林广场", name_en="WuLin Sq.", trans = 2, orient = 4, lalign=5N),
   station((0,-7.5), name = "凤起路", name_en="FengQi Rd.", trans = 2, orient = 0, lalign=10SW),
   station((0,-16), name = "龙翔桥", name_en="LongXiangQiao", trans = 2, orient = -2, lalign=10W),
   station((0,-23), display=false),
@@ -128,8 +128,8 @@ Station[] Line1_Stations = {
   station((8.5,-23), name = "城站", name_en="ChengZhan", trans = 2, orient = 2,lalign=20N),
   station((11,-23), display=false),
   station((13.5,-25.5), name = "婺江路", name_en="WuJiang Rd.",lalign=10SW),
-  station((16.5,-28.5), name = "近江", name_en="JinJiang", trans = 2, orient = -1,lalign=20S),
-  station((24.5,-36.5), name = "江陵路", name_en="JiangLing Rd.", trans = 2, orient = -1, lalign=10SW),
+  station((16.5,-28.5), name = "近江", name_en="JinJiang", trans = 2, orient = -1,lalign=20S, display=false),
+  station((23.5,-35.5), name = "江陵路", name_en="JiangLing Rd.", trans = 2, orient = -1, lalign=10SW),
   station((27,-39), display=false),
   station((27,-46.5), name = "滨河路", name_en="BinHe Rd.", lalign=10W),
   station((27,-52.5), display=false),
@@ -166,7 +166,7 @@ Station[] Line2_Stations = {
   station((1,-7.5), name = "凤起路", name_en="FengQi Rd.", trans = 2, orient = 4, display = false),
   station((5,-7.5), name = "中河北路", name_en="North ZhongHe Rd.", lalign=10S),
   station((8.5,-7.5), name = "建国北路", name_en="North JianGuo Rd.", trans = 2, orient = 0), // <-- note this one used its transition line
-  station((13.5,-7.5), name = "庆陵路", name_en="QingLing Rd.", lalign=10S),
+  station((13.5,-7.5), name = "庆菱路", name_en="QingLing Rd.", lalign=10S),
   station((18,-7.5), name = "庆春广场", name_en="QingChun Sq."),
   station((22.5,-7.5), display=false),
   station((25.5,-10.5), name = "钱江路", name_en="QianJiang Rd.", trans = 2, orient = -3, lalign=20SW),
@@ -185,29 +185,82 @@ Station[] Line2_Stations = {
   station((51,-90), name = "朝阳", name_en="ChaoYang", trans = 2, orient = -2, lalign=10E),
 };
 
+
+Station[] Line3_Stations = {
+  station((-1,5.5), name = "西湖文化广场", name_en="West Lake Cultural Sq.", trans = 2, orient = 0, display = false),
+  station((-1,0), name = "武林广场", name_en="WuLin Sq.", trans = 2, orient = 0, display = false),
+  station((-1,-2.5), display = false),
+  station((-3.5,-5), name = "武林门", name_en="WuLinMen", trans = 2, orient = 3, display = false),
+};
+
 Station[] Line4_Stations = {
   station((31,11.5), name = "彭埠", name_en="PengBu", trans = 2, orient = 2, display = false),
   station((25,11.5), name = "火车东站", name_en="East Railway Sta.", trans = 2, orient = 2, display = false),
   station((22.5, 11.5), display=false),
   station((22.5,4.5), name = "新风", name_en="XinFeng", lalign=10E),
-  station((22.5,0.5), name = "新塘", name_en="XinTang", lalign=10E),
+  station((22.5,0.0), name = "新塘", name_en="XinTang", lalign=10E),
   station((22.5,-5.5), name = "景芳", name_en="JingFang", lalign=10E),
   station((22.5, -9.5), display=false),
   station((24.5,-11.5), name = "钱江路", name_en="QianJiang Rd.", trans = 2, orient = 1, display = false),
   station((30, -17), display=false),
   station((27,-20), name = "江锦路", name_en="JiangJin Rd.", lalign=10SE),
-  station((24,-23), name = "市民中心", name_en="Citizen Center", lalign=10SE),
+  station((24,-23), name = "市民中心", name_en="Citizen Center", trans=2, orient = -3, lalign=10SE),
   station((20.5,-26.5), name = "城星路", name_en="ChengXing Rd.",lalign=10SE),
-  station((17.5,-29.5), name = "近江", name_en="JinJiang", trans = 2, orient = 3, display = false),
+  station((17.5,-29.5), name = "近江", name_en="JinJiang", trans = 2, orient = 3, lalign=10S),
+  station((12.5,-34.5), name = "甬江路", name_en="YongJiang Rd.", lalign=10NW),
+  station((8.5,-38.5), name = "南星桥", name_en="NanXingQiao", trans = 2, orient = -3, lalign=10NW),
+  station((3.5,-43.5), name = "复兴路", name_en="FuXing Rd.", lalign=10NW),
+  station((-1.5,-48.5), name = "水澄桥", name_en="ShuiChengQiao", lalign=10NW),
+  station((-7,-54), name = "联庄", name_en="LianZhuang", lalign=10NW),
+  station((-7,-59), name = "中医药大学", name_en="Chinese Medical University", trans=2, orient=4, lalign=10NW),
+  station((-7,-64), name = "杨家墩", name_en="YangJiaDun", lalign=10W),
+  station((-7,-69), name = "浦沿", name_en="PuYan", trans=2, lalign=10W),
+};
+
+Station[] Line5_Stations = {
+  station((8.5,12.5), name = "打铁关", name_en="DaTieGuan", trans = 2, orient = 4, display = false),
+  station((8.5,0.0), name = "宝善桥", name_en="BaoShanQiao", lalign=10E),
+  station((8.5,-7.5), name = "建国北路", name_en="North JianGuo Rd.", trans = 2, orient = 0, display = false),
+  station((8.5,-17), trans = 2),
+  station((8.5,-23), name = "城站", name_en="ChengZhan", trans = 2, orient = 2, display = false),
+};
+
+Station[] Line6_Stations = {
+  station((38,-23), name = "钱江世纪城", name_en="QianJiang Centry City", trans = 2, orient = -1, display = false),
+  station((30,-31), trans = 2, orient = 3),
+  station((24.5,-36.5), name = "江陵路", name_en="JiangLing Rd.", trans = 2, orient = 3, lalign=10SW, display = false),
+};
+
+Station[] Line7_Stations = {
+  station((13,-22)),
+  station((17,-18), trans = 2, orient = 2),
+  station((23,-24), name = "市民中心", name_en="Citizen Center", trans=2, orient = 1, display = false),
+  station((29,-30), trans=2,orient=-1, display=false),
+};
+
+Station[] Line9_Stations = {
+  station((24.5,-11.5), name = "钱江路", name_en="QianJiang Rd.", trans = 2, orient = 1, display = false),
+  station((19,-17), display = false),
+  station((0,-17), name = "龙翔桥", name_en="LongXiangQiao", trans = 2, orient = 2, lalign=10W, display = false),
 };
 
 draw_line(Line1_Stations, Line1_Pen+Rail_Pen);
 draw_line(Line2_Stations, Line2_Pen+Rail_Pen);
+//draw_line(Line3_Stations, Line3_Pen+Rail_Pen);
 draw_line(Line4_Stations, Line4_Pen+Rail_Pen);
+//draw_line(Line5_Stations, Line5_Pen+Rail_Pen);
+//draw_line(Line6_Stations, Line6_Pen+Rail_Pen);
+//draw_line(Line7_Stations, Line7_Pen+Rail_Pen);
+//draw_line(Line9_Stations, Line9_Pen+Rail_Pen);
 draw_stations(Line1_Stations);
 draw_stations(Line2_Stations);
+//draw_stations(Line3_Stations);
 draw_stations(Line4_Stations);
-
+//draw_stations(Line5_Stations);
+//draw_stations(Line6_Stations);
+//draw_stations(Line7_Stations);
+//draw_stations(Line9_Stations);
+/*
 void draw_legend(string n, pair pos, pen p) {
   path rrect = (-3,-4) -- (3, -4){right} .. {up}(4,-3) -- (4,3){up} .. {left}(3,4) -- (-3, 4){left} .. {down}(-4, 3) -- (-4, -3){down} .. {right}cycle;
   Label num = Label(n);
@@ -219,11 +272,11 @@ void draw_legend(string n, pair pos, pen p) {
 
 draw_legend("1", (-20, -33), Line1_Pen);
 draw_legend("2", (-17, -33), Line2_Pen);
-draw_legend("3", (-14, -33), Line3_Pen+opacity(0.2));
+//draw_legend("3", (-14, -33), Line3_Pen+opacity(0.2));
 draw_legend("4", (-11, -33), Line4_Pen);
-draw_legend("5", (-8, -33), Line5_Pen+opacity(0.2));
-draw_legend("6", (-5, -33), Line6_Pen+opacity(0.2));
-draw_legend("7", (-2, -33), Line7_Pen+opacity(0.2));
-draw_legend("8", (1, -33), Line8_Pen+opacity(0.2));
-draw_legend("9", (4, -33), Line9_Pen+opacity(0.2));
-
+//draw_legend("5", (-8, -33), Line5_Pen+opacity(0.2));
+//draw_legend("6", (-5, -33), Line6_Pen+opacity(0.2));
+//draw_legend("7", (-2, -33), Line7_Pen+opacity(0.2));
+//draw_legend("8", (1, -33), Line8_Pen+opacity(0.2));
+//draw_legend("9", (4, -33), Line9_Pen+opacity(0.2));
+*/
