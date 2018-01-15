@@ -151,7 +151,7 @@ Station[] Line1_Stations = {
 
 Station[] Line2_Stations = {
   station((-60,50), name = "良渚", name_en="LiangZhu"),
-  station((-51.5,50), name = "杜甫村", name_en="DuFu Court"),
+  station((-51.5,50), name = "杜甫村", name_en="DuFuCun"),
   station((-48.5,50), display=false),
   station((-44.5,46), name = "白洋", name_en="BaiYang", lalign=10NE),
   station((-39.5,41), name = "金家渡", name_en="JinJiaDu", trans = 2, orient = -1, lalign=10NE),
@@ -165,7 +165,7 @@ Station[] Line2_Stations = {
   station((-28,7), name = "丰潭路", name_en="FengTan Rd.", lalign=10S),
   station((-22,7), name = "古翠路", name_en="GuCui Rd."),
   station((-15.5,7), name = "学院路", name_en="XueYuan Rd.", trans = 2, orient = 4, lalign=10S),
-  station((-9.5,7), name = "下宁桥", name_en="XiaNingQiao"),
+  station((-9.5,7), name = "下宁桥", name_en="XiaNing Bridge"),
   station((-7,7), display=false),
   station((-7,3.5), name = "沈塘桥", name_en="ShenTangQiao", lalign=10SW),
   station((-7,-1.5), display=false),
@@ -185,7 +185,7 @@ Station[] Line2_Stations = {
   station((51,-39.5), name = "振宁路", name_en="ZhenNing Rd.", lalign=10E),
   station((51,-47.5), name = "建设三路", name_en="JianSheSan Rd.", trans = 2, orient = 2, lalign=10W),
   station((51,-50), name = "建设一路", name_en="JianSheYi Rd.", lalign=10E),
-  station((51,-58), name = "人民广场", name_en="People Sq.", trans = 2, orient = 2, lalign=10E),
+  station((51,-58), name = "人民广场", name_en="People's Sq.", trans = 2, orient = 2, lalign=10E),
   station((51,-64.5), name = "杭发厂", name_en="HangFaChang", trans = 2, orient = 4, lalign=10E),
   station((51,-71.5), name = "人民路", name_en="RenMin Rd.", trans = 3, orient = -2, lalign=10E),
   station((51,-80.5), name = "潘水", name_en="PanShui", lalign=10E),
